@@ -53,6 +53,8 @@ set(PLUGIN_LISTS
     groupNormalizationPlugin
     instanceNormalizationPlugin
     leakyReluPlugin
+    mergeIndicesPlugin
+    mergeTokensPlugin
     modulatedDeformConvPlugin
     multilevelCropAndResizePlugin
     multilevelProposeROI
@@ -72,6 +74,7 @@ set(PLUGIN_LISTS
     scatterPlugin
     specialSlicePlugin
     splitPlugin
+    unmergeTokensPlugin
     voxelGeneratorPlugin
 )
 

@@ -33,6 +33,8 @@
 #include "gridAnchorPlugin/gridAnchorPlugin.h"
 #include "instanceNormalizationPlugin/instanceNormalizationPlugin.h"
 #include "leakyReluPlugin/lReluPlugin.h"
+#include "mergeIndicesPlugin/mergeIndicesPlugin.h"
+#include "mergeTokensPlugin/mergeTokensPlugin.h"
 #include "modulatedDeformConvPlugin/modulatedDeformConvPlugin.h"
 #include "multilevelCropAndResizePlugin/multilevelCropAndResizePlugin.h"
 #include "multilevelProposeROI/multilevelProposeROIPlugin.h"
@@ -52,6 +54,7 @@
 #include "scatterPlugin/scatterPlugin.h"
 #include "specialSlicePlugin/specialSlicePlugin.h"
 #include "splitPlugin/split.h"
+#include "unmergeTokensPlugin/unmergeTokensPlugin.h"
 #include "voxelGeneratorPlugin/voxelGenerator.h"
 
 #include <algorithm>
@@ -196,6 +199,8 @@ extern "C"
         initializePlugin<nvinfer1::plugin::InstanceNormalizationPluginCreator>(logger, libNamespace);
         initializePlugin<nvinfer1::plugin::InstanceNormalizationPluginCreatorV2>(logger, libNamespace);
         initializePlugin<nvinfer1::plugin::LReluPluginCreator>(logger, libNamespace);
+        initializePlugin<nvinfer1::plugin::MergeIndicesPluginCreator>(logger, libNamespace);
+        initializePlugin<nvinfer1::plugin::MergeTokensPluginCreator>(logger, libNamespace);
         initializePlugin<nvinfer1::plugin::ModulatedDeformableConvPluginDynamicCreator>(logger, libNamespace);
         initializePlugin<nvinfer1::plugin::MultilevelCropAndResizePluginCreator>(logger, libNamespace);
         initializePlugin<nvinfer1::plugin::MultilevelProposeROIPluginCreator>(logger, libNamespace);
@@ -217,6 +222,7 @@ extern "C"
         initializePlugin<nvinfer1::plugin::ScatterNDPluginCreator>(logger, libNamespace);
         initializePlugin<nvinfer1::plugin::SpecialSlicePluginCreator>(logger, libNamespace);
         initializePlugin<nvinfer1::plugin::SplitPluginCreator>(logger, libNamespace);
+        initializePlugin<nvinfer1::plugin::UnmergeTokensPluginCreator>(logger, libNamespace);
         initializePlugin<nvinfer1::plugin::VoxelGeneratorPluginCreator>(logger, libNamespace);
         return true;
     }
